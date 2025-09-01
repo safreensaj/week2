@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="font-sans bg-grey-50 text-gray-800">
+    <header class="bg-stone-800 text-white p-4">
+        <h1 class="text-2xl font-semibold flex justify-center">My Travel Blog</h1>
+    </header>
+    <nav class="bg-stone-700 text-white p-3 flex gap-4 justify-end px-10">
+        <a href="#home"class="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400">Home</a>
+         <a href="#about"class="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400">About</a>
+          <a href="#destinations"class="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400">Destinations</a>
+           <a href="#contact"class="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400">Contact</a>
+    </nav>
+    <main class="p-6">
+        <section id="home"class="text-center py-2">
+            <h2 class="text-3xl md:text-2xl font-bold mb-4">Explore the world</h2>
+            <p class="text-lg md:text-xl">Discover amazing places with me!</p>
+        </section>
+        <section id="about" class="max-w-13xl mx-auto py-1">
+            <h3 class="text-3xl fond-semibold mb-5 px-3">About Me</h3>
+            <p class="text-gray-700 px-3">Hi! Iam travel enthusiast who loves exploring new cultures and destinations</p>
+        </section>
+        <section id="destinations"class="py-8">
+            <h3 class="text-2xl font-semibold text-center mb-6">Top Destinations</h3>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+                    <img class="h-90" src="/Day1/assets/paris.jpeg ">
+                    <h4 class="text-xl font-bold">Paris</h4>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+                    <img class="h-90" src="/Day1/assets/tokyo.jpeg">
+                    <h4 class="text-xl font-bold">Tokyo</h4>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+                    <img class="h-90"  src="/Day1/assets/newyork.jpeg">
+                    <h4 class="text-xl font-bold">Newyork</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="content" class="bg-stone-600 text-white text-center p-4 mt-6">
+        <p>&copy; 2025 My Travel Blog </p>
+    </footer>
+    
+</body>
+</html>
