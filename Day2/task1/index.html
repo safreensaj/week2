@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title"></h1>
+    <button onclick="changeText()">Click</button>
+    <script>
+        // Practice Basics
+
+    let name = "Anu"
+    let numbers = [1,2,3]
+    let person = {age:25,city:"kochi"}
+    console.log(name)
+    console.log(numbers)
+    console.log(person)
+         // Function declaration
+
+    function greet(){
+        console.log("Helloooo")
+    }
+    greet()
+          // Function Expression
+
+    const add = function(a,b){
+        return a+b
+    }
+    console.log(add(2,3))
+          // Arrow Function
+
+    const multiply = (x,y)=>x*y
+    console.log(multiply(4,5))
+ 
+        // Built in utilities
+
+    alert("welcomee")
+    let user = prompt("Enter your name:")
+    let confirmMsg = confirm("Are you sure?")
+    setTimeout(()=>{
+        console.log("This runs after 2 seconds")
+    },2000)
+        // Dom Elements
+    function changeText(){
+        let title = document.getElementById("title")
+        title.innerText = "Text changed!!"
+        title.style.color = "red"
+    }
+    </script>
+</body>
+</html>

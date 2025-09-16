@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="bg-gray-800 w-full h-20 relative">
+            <h1 class="flex justify-center text-white text-2xl font-semibold p-4">My Travel Blog</h1>
+            <img src="/Day2 task2/assets/logo.jpeg" id="openheader"
+                class="w-10 h-10 absolute right-0 top-3 mr-10 rounded-full cursor-pointer ">
+        </div>
+    </header>
+    <nav class="bg-stone-700 text-white p-3 flex gap-4 h-10 justify-end px-10">
+        <a href="#home" class="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400">Home</a>
+        <a href="#about" class="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400">About</a>
+        <a href="#destinations"
+            class="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400">Destinations</a>
+        <a href="#contact" class="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400">Contact</a>
+    </nav>
+    <main class="p-6">
+        <section id="home" class="text-center py-2">
+            <h1 class="text-3xl md:text-2xl font-bold mb-4">Explore the world</h1>
+            <p class="text-lg md:text-xl">Discover amazing places with me!</p>
+        </section>
+        <section id="about" class="max-w-13xl mx-auto py-1">
+            <h3 class="text-3xl font-semibold mb-5 px-3">About Me</h3>
+            <p id="text" class="text-gray-700 px-3">Hi! I am a travel enthusiast who loves exploring new cultures and
+                destinations. Every journey gives me unforgettable experiences and memories. Travelling allows me to
+                capture beautiful moments and stories through my lens. I believe every trip teaches me something new
+                about the world and myself. For me, travelling is not just a hobby but a way of life. </p>
+        </section>
+        <section id="destinations" class="py-8">
+            <h3 class="text-2xl font-semibold text-center mb-6">Top Destinations</h3>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+                    <img class="h-90" src="/Day2 task2/assets/eiffel.jpeg" id="click">
+                    <h4 class="text-xl font-bold">Paris</h4>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+                    <img class="h-90" src="/Day1/assets/tokyo.jpeg" id="toggle">
+                    <h4 class="text-xl font-bold">Tokyo</h4>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+                    <img class="h-90" src="/Day1/assets/newyork.jpeg" id="myImg">
+                    <h4 class="text-xl font-bold">New York</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="content" class="bg-stone-600 text-white text-center p-4 mt-6">
+        <p>&copy; 2025 My Travel Blog </p>
+    </footer>
+    <div id="modal" class="fixed inset-0 bg-black/50 flex justify-center hidden items-center">
+        <div class="h-50 w-88 bg-stone-800 rounded-lg relative">
+            <img src="/Day2 task2/assets/images.jpeg" class="h-30 w-30 rounded-full absolute top-10 ml-2">
+            <h1 class="text-white font-semibold flex justify-center text-2xl py-2">Safreen Sajid</h1>
+            <p class="text-white ml-33">Iam someone who believes in continuous growth and learning, always striving to
+                improve myself </p>
+            <button id="close" class="border px-4 py-2 bg-gray-200 absolute right-5 rounded-lg">Close</button>
+            <h3 class="text-white p-3  mt-2">Always curious, always exploring....</h3>
+        </div>
+    </div>
+    <div id="newModal" class="fixed inset-0 bg-black/50 flex justify-center hidden items-center">
+        <div class="bg-white rounded-lg shadow-lg p-4 w-80 relative">
+            <button id="btn" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl font-bold">
+                &times;
+            </button>
+
+            <h3 class="text-lg font-semibold text-center">Paris</h3>
+            <p class="text-sm text-gray-600 text-center mb-3">
+                The city of lights, love, and timeless beauty.
+            </p>
+            <div class="grid grid-rows-3 gap-2">
+                <img src="/Day2 task2/assets/download (1).jpeg" class="object-cover w-full h-32 rounded-md">
+                <img src="/Day2 task2/assets/Louvre.jpeg" class="object-cover w-full h-32 rounded-md">
+                <img src="/Day2 task2/assets/Arc de triomphe.jpeg" class="object-cover w-full h-32 rounded-md">
+            </div>
+        </div>
+    </div>
+    <script>
+        const openBtn = document.getElementById('openheader')
+        const modal = document.getElementById('modal')
+        const close = document.getElementById('close')
+
+        openBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden')
+        })
+        close.addEventListener('click', () => {
+            modal.classList.add('hidden')
+        })
+        const toggle = document.getElementById('toggle')
+        const change = document.getElementById('text')
+        toggle.addEventListener('dblclick', () => {
+            document.body.classList.toggle("bg-black")
+            change.classList.remove("text-gray-700")
+            document.body.classList.toggle("text-white")
+        })
+        const myImg = document.getElementById('myImg')
+        myImg.addEventListener('mouseenter', () => {
+            myImg.src = "/Day2 task2/assets/download.jpeg"
+        })
+        myImg.addEventListener('mouseleave', () => {
+            myImg.src = "/Day1/assets/newyork.jpeg"
+        })
+        const paris = document.getElementById('newModal')
+        const img1 = document.getElementById('click')
+        const mybtn = document.getElementById('btn')
+        img1.addEventListener('click', () => {
+            paris.classList.remove('hidden')
+        })
+        mybtn.addEventListener('click', () => {
+            paris.classList.add('hidden')
+        })
+    </script>
+
+</body>
+
+</html>

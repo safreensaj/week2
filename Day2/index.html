@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-600 text-gray-900">
+    <nav class="bg-gray-900 shadow-md fixed w-full z-10 text-white">
+         <div class="flex justify-end relative">
+                <button id="open" class="text-2xl flex justify-end absolute mt-5 mr-2 "><i class="fas fa-user"></i></button>
+        </div>
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold">My Portfolio</h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-500">About</a></li>
+                <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+                <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+            </ul>
+                <button id="menu-btn" class="md:hidden text-2xl"><i class="fas fa-bars menu-btn"></i></button>
+        </div>
+        <div id="menu" class="hidden md:hidden bg-white p-4 space-y-2">
+            <a href="#home" class="block">Home</a>
+            <a href="#about" class="block">About</a>
+            <a href="#projects" class="block">Projects</a>
+            <a href="#contact" class="block">Contact</a>
+        </div>
+    </nav>
+    <section id="home" class="h-screen flex items-center justify-center bg-gradiant-to-r from-blue-400 to-purple-500 text-white">
+        <div class="text-center">
+            <h2 class="text-5xl font-bold mb-4">Hiii I'm Safreen</h2>
+            <p class="text-xl mb-6">A Passionate Web Developer</p>
+            <img src="/Day2/assets/developer.jpeg" alt="my Profile" class="w-90 h-80 rounded-full shadow-lg">
+            <div class="mt-10">
+            <a href="#projects" class=" px-6 py-3 bg-white text-blue-900 font-semibold rounded-lg cursor-pointer shadow hover:bg-gray-200">View My Work</a>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-16 container mx-auto px-6 text-white">
+        <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
+        <p class="text-lg text-center max-w-2xl mx-auto">I am a web developer with a strong passion for creating clean,modern, and user-friendly websites.<br>Skilled in HTML, CSS, javaScript,and frameworks like TailwindCSS.</p>
+    </section>
+    <section id="projects" class="py-16 bg-gray-400">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl bg-gray-100 font-bold mb-8 text-center">Projects</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img src="/Day2/assets/web design.jpeg" class="rounded-md mb-4 w-200 h-50">
+                    <h3 class="text-xl font-semibold mb-2">Project One</h3>
+                    <p class="mb-4">A short description of the project goes here </p>
+                    <a href="#" class="text-blue-900 hover:underline">View Details</a>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img src="/Day2/assets/mama.jpeg" class="rounded-md mb-4 w-200 h-50">
+                     <h3 class="text-xl font-semibold mb-2">Project Two</h3>
+                    <p class="mb-4">A short description of the project goes here </p>
+                    <a href="#" class="text-blue-900 hover:underline">View Details</a>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img src="/Day2/assets/web.jpeg" class="rounded-md mb-4 w-200 h-50">
+                     <h3 class="text-xl font-semibold mb-2">Project Three</h3>
+                    <p class="mb-4">A short description of the project goes here </p>
+                    <a href="#" class="text-blue-900 hover:underline">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-16 container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-6 text-center">Contact Me</h2>
+        <form class="mx-w-lg mx-auto bg-white p-6 rounded-lg shadow space-y-4">
+            <input type="text" placeholder="Your Name" class="w-full p-3 border rounded">
+            <input type="email" placeholder="Your Email" class="w-full p-3 border rounded">
+            <textarea placeholder="Your Message" rows="4" class="w-full p-3 border rounded"></textarea>
+            <button type="submit" class="w-full bg-gray-600 text-white py-3 cursor-pointer rounded-lg hover:bg-gray-700">Send</button>
+        </form>
+    </section> 
+    <footer class="bg-gray-900 text-white text-center py-6">
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+    <div id="modal" class="fixed inset-0 bg-gray/50 flex justify-center hidden items-center">
+        <div class="h-50 w-88 bg-gray-100 rounded-lg relative">
+            <p class="px-10 py-10 text-3xl text-blue-900 rounded-lg bg-gray-100">Do you want to open</p>
+           <button id="close" class="border absolute right-6 bottom-6 m-5 px-4 py-2 rounded-lg bg-gray-300 text-blue-900">Open</button>
+        </div>
+    </div>
+    <script>
+        // const menuBtn = document.getElementById("menu-btn");
+        // const menu = document.getElementById("menu");
+        // const close = document.getElementById('close')
+        // menuBtn.addEventListener("click",()=>{
+        //     menu.classList.toggle("hidden");
+        // })
+        const openBtn = document.getElementById('open')
+        const modal = document.getElementById('modal')
+        const close = document.getElementById('close')
+        
+        openBtn.addEventListener('click',()=>{
+            modal.classList.remove('hidden')
+        })
+        close.addEventListener('click',()=>{
+            modal.classList.add('hidden')
+        })
+    </script>
+                
+</body>
+</html>
