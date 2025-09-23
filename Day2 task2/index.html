@@ -14,6 +14,7 @@
     <header>
         <div class="bg-gray-800 w-full h-20 relative">
             <h1 class="flex justify-center text-white text-2xl font-semibold p-4">My Travel Blog</h1>
+            <span id="toggle" class="absolute text-white top-6 right-30"><i class="fas fa-moon"></i></span>
             <img src="/Day2 task2/assets/logo.jpeg" id="openheader"
                 class="w-10 h-10 absolute right-0 top-3 mr-10 rounded-full cursor-pointer ">
         </div>
@@ -40,17 +41,20 @@
         <section id="destinations" class="py-8">
             <h3 class="text-2xl font-semibold text-center mb-6">Top Destinations</h3>
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-                    <img class="h-90" src="/Day2 task2/assets/eiffel.jpeg" id="click">
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
+                    <img class="h-90" src="/Day2 task2/assets/eiffel.jpeg">
                     <h4 class="text-xl font-bold">Paris</h4>
+                    <button id="click" class="absolute right-4 bottom-2 px-3 py-1 rounded-md bg-gray-300 hover:bg-blue-300">View More</button>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-                    <img class="h-90" src="/Day1/assets/tokyo.jpeg" id="toggle">
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
+                    <img class="h-90" src="/Day1/assets/tokyo.jpeg">
                     <h4 class="text-xl font-bold">Tokyo</h4>
+                    <button class="absolute right-4 bottom-2 px-3 py-1 rounded-md bg-gray-300">View More</button>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
                     <img class="h-90" src="/Day1/assets/newyork.jpeg" id="myImg">
                     <h4 class="text-xl font-bold">New York</h4>
+                     <button class="absolute right-4 bottom-2 px-3 py-1 rounded-md bg-gray-300">View More</button>
                 </div>
             </div>
         </section>
@@ -89,12 +93,14 @@
         const openBtn = document.getElementById('openheader')
         const modal = document.getElementById('modal')
         const close = document.getElementById('close')
-
+        const body = document.body
         openBtn.addEventListener('click', () => {
             modal.classList.remove('hidden')
+            body.classList.add('overflow-hidden')
         })
         close.addEventListener('click', () => {
             modal.classList.add('hidden')
+            body.classList.remove('overflow-hidden')
         })
         const toggle = document.getElementById('toggle')
         const change = document.getElementById('text')
