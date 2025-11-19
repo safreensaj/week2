@@ -1,0 +1,224 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #f7f9fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .dashboard {
+      width: 750px;
+      background: white;
+      border: 2px solid #d9d9d9;
+      border-radius: 10px;
+      padding: 25px 35px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    /* Search Section */
+    .search-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 10px 15px;
+      border: 1.5px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    .search-bar button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .search-btn {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .create-btn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    /* Section Titles */
+    h3 {
+      margin: 20px 0 10px;
+      color: #444;
+      border-bottom: 1.5px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    /* Cards for Doctors and Patients */
+    .card {
+      background-color: #f9f9f9;
+      border: 1.5px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card span {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .actions button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 13px;
+      margin-left: 6px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .edit {
+      background-color: #ffeb99;
+      color: #333;
+    }
+
+    .delete {
+      background-color: #ffb3b3;
+      color: #333;
+    }
+
+    .blacklist {
+      background-color: #bfbfbf;
+      color: #fff;
+    }
+
+    /* Appointment Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1.5px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    th {
+      background-color: #f1f1f1;
+    }
+
+    .view-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h1>Admin Dashboard</h1>
+
+    <!-- Search -->
+    <div class="search-bar">
+      <input type="text" placeholder="doctor, patient, department..." />
+      <button class="search-btn">search</button>
+      <button class="create-btn">create</button>
+    </div>
+
+    <!-- Registered Doctors -->
+    <h3>Registered Doctors</h3>
+    <div class="card">
+      <span>Dr. abcde</span>
+      <div class="actions">
+        <button class="edit">edit</button>
+        <button class="delete">delete</button>
+        <button class="blacklist">blacklist</button>
+      </div>
+    </div>
+    <div class="card">
+      <span>Dr. Pqrst</span>
+      <div class="actions">
+        <button class="edit">edit</button>
+        <button class="delete">delete</button>
+        <button class="blacklist">blacklist</button>
+      </div>
+    </div>
+
+    <!-- Registered Patients -->
+    <h3>Registered Patients</h3>
+    <div class="card">
+      <span>Mr. abcde</span>
+      <div class="actions">
+        <button class="edit">edit</button>
+        <button class="delete">delete</button>
+        <button class="blacklist">blacklist</button>
+      </div>
+    </div>
+    <div class="card">
+      <span>Miss. Pqrst</span>
+      <div class="actions">
+        <button class="edit">edit</button>
+        <button class="delete">delete</button>
+        <button class="blacklist">blacklist</button>
+      </div>
+    </div>
+
+    <!-- Upcoming Appointments -->
+    <h3>Upcoming Appointments</h3>
+    <table>
+      <tr>
+        <th>Sr No.</th>
+        <th>Patient Name</th>
+        <th>Doctor Name</th>
+        <th>Department</th>
+        <th>Patient History</th>
+      </tr>
+      <tr>
+        <td>1001.</td>
+        <td>Mr. abcde</td>
+        <td>Dr. pqrst</td>
+        <td>Cardiology</td>
+        <td><button class="view-btn">view</button></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
+    
+</body>
+</html>
