@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBlog</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="bg-gray-800 w-full h-20 relative">
+            <h1 class="flex justify-center text-white text-2xl font-semibold p-4">My Travel Blog</h1>
+            <span id="toggle" class="absolute text-white top-6 right-30"><i class="fas fa-moon"></i></span>
+            <img src="./assets/logo.jpeg" id="openheader"
+                class="w-10 h-10 absolute right-0 top-3 mr-10 rounded-full cursor-pointer ">
+        </div>
+    </header>
+    <nav class="bg-stone-700 text-white p-3 flex gap-4 h-10 justify-end px-10">
+        <a href="#home" class="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400">Home</a>
+        <a href="#about" class="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400">About</a>
+        <a href="#destinations"
+            class="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400">Destinations</a>
+        <a href="#contact" class="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-400">Contact</a>
+    </nav>
+    <main class="p-6">
+        <section id="home" class="text-center py-2">
+            <h1 class="text-3xl md:text-2xl font-bold mb-4">Explore the world</h1>
+            <p class="text-lg md:text-xl">Discover amazing places with me!</p>
+        </section>
+        <section id="about" class="max-w-7xl mx-auto py-1">
+            <h3 class="text-3xl font-semibold mb-5 px-3">About Me</h3>
+            <p id="text" class="text-gray-700 px-3">Hi! I am a travel enthusiast who loves exploring new cultures and
+                destinations. Every journey gives me unforgettable experiences and memories. Travelling allows me to
+                capture beautiful moments and stories through my lens. I believe every trip teaches me something new
+                about the world and myself. For me, travelling is not just a hobby but a way of life. </p>
+        </section>
+        <section id="destinations" class="py-8">
+            <h3 class="text-2xl font-semibold text-center mb-6">Top Destinations</h3>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
+                    <img class="h-96" src="./assets/eiffel.jpeg">
+                    <h4 class="text-xl font-bold">Paris</h4>
+                    <button id="click"
+                        class="absolute right-4 bottom-2 px-3 py-1 rounded-md bg-gray-300 hover:bg-blue-300">View
+                        More</button>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
+                    <img class="h-96" src="./assets/tokyo.jpeg">
+                    <h4 class="text-xl font-bold">Tokyo</h4>
+                    <button id="click2" class="absolute right-4 bottom-2 px-3 py-1 rounded-md bg-gray-300">View
+                        More</button>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
+                    <img class="h-96" src="./assets/newyork.jpeg" id="myImg">
+                    <h4 class="text-xl font-bold">New York</h4>
+                    <button class="absolute right-4 bottom-2 px-3 py-1 rounded-md bg-gray-300">View More</button>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="py-16 container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-6 text-center">Contact Me</h2>
+            <form id="demoform" class="mx-w-lg mx-auto bg-white p-6 rounded-lg shadow space-y-4">
+                <input id="nameInput" type="text" placeholder="Your Name" class="w-full p-3 border rounded">
+                <p id="namefeedback" class="text-sm mt-1 text-red-600"></p>
+                <input id="emailInput" type="email" placeholder="Your Email" class="w-full p-3 border rounded">
+                <p id="emailfeedback" class="text-sm mt-1 text-red-600"></p>
+                <textarea placeholder="Your Message" rows="4" class="w-full p-3 border rounded"></textarea>
+                <button type="submit"
+                    class="w-full bg-gray-600 text-white py-3 cursor-pointer rounded-lg hover:bg-gray-700">Submit</button>
+                <p id="feedback" class="text-sm mt-1 text-red-600"></p>
+            </form>
+        </section>
+    </main>
+    <footer id="content" class="bg-stone-600 text-white text-center p-4 mt-6">
+        <p>&copy; 2025 My Travel Blog </p>
+    </footer>
+    <div id="modal" class="fixed inset-0 bg-black/50 flex justify-center hidden items-center">
+        <div class="h-50 w-88 bg-stone-800 rounded-lg relative">
+            <img src="./assets/images.jpeg" class="h-30 w-30 rounded-full absolute top-10 ml-2">
+            <h1 class="text-white font-semibold flex justify-center text-2xl py-2">Safreen Sajid</h1>
+            <p class="text-white ml-33">I'm someone who believes in continuous growth and learning, always striving to
+                improve myself </p>
+            <button id="close" class="border px-4 py-2 bg-gray-200 absolute right-5 rounded-lg">Close</button>
+            <h3 class="text-white p-3  mt-2">Always curious, always exploring....</h3>
+        </div>
+    </div>
+    <div id="newModal" class="fixed inset-0 bg-black/50 flex justify-center hidden items-center">
+        <div class="bg-white rounded-lg shadow-lg p-4 w-80 relative">
+            <button id="btn" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl font-bold">
+                &times;
+            </button>
+
+            <h3 class="text-lg font-semibold text-center">Paris</h3>
+            <p class="text-sm text-gray-600 text-center mb-3">
+                The city of lights, love, and timeless beauty.
+            </p>
+            <div class="grid grid-rows-3 gap-2">
+                <img src="./assets/download (1).jpeg" class="object-cover w-full h-32 rounded-md">
+                <img src="./assets/Louvre.jpeg" class="object-cover w-full h-32 rounded-md">
+                <img src="./assets/Arc de triomphe.jpeg" class="object-cover w-full h-32 rounded-md">
+            </div>
+        </div>
+    </div>
+
+    <div id="Modal2" class="fixed inset-0 bg-black/50 flex justify-center hidden items-center">
+        <div class="bg-white rounded-lg shadow-lg p-4 w-80 relative">
+            <button id="btn2" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl font-bold">
+                &times;
+            </button>
+
+            <h3 class="text-lg font-semibold text-center">Tokyo</h3>
+            <p class="text-sm text-gray-600 text-center mb-3">
+                Tokyo is a heartbeat of beauty and chaos, pulsing with life in every shimmering corner.
+            </p>
+            <div class="grid grid-rows-3 gap-2">
+                <img src="./assets/tokyo1.jpeg" class="object-cover w-full h-32 rounded-md">
+                <img src="./assets/tokyo2.jpeg" class="object-cover w-full h-32 rounded-md">
+                <img src="./assets/tokyo4.jpeg" class="object-cover w-full h-32 rounded-md">
+            </div>
+        </div>
+    </div>
+    <script>
+        const demoform = document.getElementById('demoform')
+        const nameInput = document.getElementById('nameInput')
+        const emailInput = document.getElementById('emailInput')
+        const namefeedback = document.getElementById('namefeedback')
+        const emailfeedback = document.getElementById('emailfeedback')
+        const feedback = document.getElementById('feedback')
+        const openBtn = document.getElementById('openheader')
+        const modal = document.getElementById('modal')
+        const close = document.getElementById('close')
+        const body = document.body
+
+
+        const namePattern = /^[A-Za-z]+\s+[A-Za-z]+$/
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        function nameCheck() {
+            const name = nameInput.value.trim();
+            if (!namePattern.test(name)) {
+                namefeedback.textContent = "Incorrect name";
+            } else {
+                namefeedback.textContent = " "
+            }
+            return namePattern.test(name)
+        }
+
+
+        function emailCheck() {
+            const email = emailInput.value.trim();
+            if (!emailPattern.test(email)) {
+                emailfeedback.textContent = "Incorrect email";
+            } else {
+                emailfeedback.textContent = ""
+            }
+            return namePattern.test(name)
+        }
+        nameInput.addEventListener('blur', nameCheck)
+        emailInput.addEventListener('blur', emailCheck)
+        demoform.addEventListener('submit', (e) => {
+            e.preventDefault()
+            const allOk = nameCheck() && emailCheck()
+            if (allOk) {
+                feedback.textContent = "All ok, form submitting..."
+                feedback.className = "text-green-600"
+            }
+        })
+
+        openBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden')
+            body.classList.add('overflow-hidden')
+        })
+        close.addEventListener('click', () => {
+            modal.classList.add('hidden')
+            body.classList.remove('overflow-hidden')
+        })
+        const toggle = document.getElementById('toggle')
+        const change = document.getElementById('text')
+        toggle.addEventListener('dblclick', () => {
+            document.body.classList.toggle("bg-black")
+            change.classList.toggle("text-gray-700")
+
+        })
+        const myImg = document.getElementById('myImg')
+        myImg.addEventListener('mouseenter', () => {
+            myImg.src = "./assets/download.jpeg"
+        })
+        myImg.addEventListener('mouseleave', () => {
+            myImg.src = "./assets/newyork.jpeg"
+        })
+        const paris = document.getElementById('newModal')
+        const img1 = document.getElementById('click')
+        const mybtn = document.getElementById('btn')
+        img1.addEventListener('click', () => {
+            paris.classList.remove('hidden')
+        })
+        mybtn.addEventListener('click', () => {
+            paris.classList.add('hidden')
+        })
+
+        const tokyo = document.getElementById('Modal2')
+        const img2 = document.getElementById('click2')
+        const mybtn2 = document.getElementById('btn2')
+        img2.addEventListener('click', () => {
+            tokyo.classList.remove('hidden')
+        })
+        mybtn2.addEventListener('click', () => {
+            tokyo.classList.add('hidden')
+        })
+    </script>
+
+</body>
+
+</html>
