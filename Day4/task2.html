@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Propagation Practice</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-10 space-y-16">
+
+  <!-- ---------------- TASK 1 & 2 ---------------- -->
+  <section class="space-y-4">
+    <h2 class="text-2xl font-bold">Task 1 & 2: Bubbling + stopPropagation()</h2>
+
+    <div id="outer" class="p-6 bg-blue-300 rounded-xl">
+      Outer
+      <div id="middle" class="p-6 bg-blue-400 rounded-xl">
+        Middle
+        <div id="inner" class="p-6 bg-blue-500 text-white rounded-xl">
+          Inner (click me)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ---------------- TASK 3 & 4 ---------------- -->
+  <section class="space-y-4">
+    <h2 class="text-2xl font-bold">Task 3 & 4: Capturing vs Bubbling</h2>
+
+    <div id="capOuter" class="p-6 bg-green-300 rounded-xl">
+      Outer (capturing)
+      <div id="capMiddle" class="p-6 bg-green-400 rounded-xl">
+        Middle (capturing)
+        <div id="capInner" class="p-6 bg-green-500 text-white rounded-xl">
+          Inner (bubbling)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ---------------- TASK 5 ---------------- -->
+  <section class="space-y-4">
+    <h2 class="text-2xl font-bold">Task 5: Event Delegation</h2>
+
+    <div id="parent" class="grid grid-cols-5 gap-3 bg-yellow-200 p-6 rounded-xl">
+      <button class="bg-yellow-400 p-3 rounded">1</button>
+      <button class="bg-yellow-400 p-3 rounded">2</button>
+      <button class="bg-yellow-400 p-3 rounded">3</button>
+      <button class="bg-yellow-400 p-3 rounded">4</button>
+      <button class="bg-yellow-400 p-3 rounded">5</button>
+      <button class="bg-yellow-400 p-3 rounded">6</button>
+      <button class="bg-yellow-400 p-3 rounded">7</button>
+      <button class="bg-yellow-400 p-3 rounded">8</button>
+      <button class="bg-yellow-400 p-3 rounded">9</button>
+      <button class="bg-yellow-400 p-3 rounded">10</button>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ---------------- TASK 6 ---------------- -->
+  <section class="space-y-4">
+    <h2 class="text-2xl font-bold">Task 6: preventDefault + stopPropagation</h2>
+
+    <div id="stopOuter" class="p-6 bg-purple-300 rounded-xl">
+      Outer
+      <div id="stopMiddle" class="p-6 bg-purple-400 rounded-xl">
+        Middle
+        <div id="stopInner" class="p-6 bg-purple-500 text-white rounded-xl space-y-3">
+          <p>Inner</p>
+          <a href="https://google.com" class="underline">Go to Google</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // ---------------- TASK 1 & 2: Bubbling + stopPropagation ----------------
+    const outer = document.getElementById("outer");
+    const middle = document.getElementById("middle");
+    const inner = document.getElementById("inner");
+
+    outer.addEventListener("click", () => {
+      alert("Outer clicked")
+    })
+    middle.addEventListener("click", () => {
+        alert("Middle clicked")
+    });
+    inner.addEventListener("click", (event) => {
+      alert("inner clicked")
+      event.stopPropagation();   // Task 2
+    });
+
+    // ---------------- TASK 3 & 4: Capturing vs Bubbling ----------------
+    const capOuter = document.getElementById("capOuter");
+    const capMiddle = document.getElementById("capMiddle");
+    const capInner = document.getElementById("capInner");
+
+    capOuter.addEventListener("click",
+      () => alert("Outer (capturing)"),
+      true // capturing
+    );
+
+    capMiddle.addEventListener("click",
+      () => alert("Middle (capturing)"),
+      true // capturing
+    );
+
+    capInner.addEventListener("click",
+      () => alert("Inner (bubbling)")
+    );
+
+    // ---------------- TASK 5: Event Delegation ----------------
+
+    const parent = document.getElementById('parent')
+    parent.addEventListener('click',(e)=>{
+    const box = event.target
+    if(!box)return
+    alert('you clicked:'+box.textContent)
+    box.textContent="clicked"
+    box.style.backgroundColor="gray"
+    })
+
+    // ---------------- TASK 6: preventDefault + stopPropagation ----------------
+    const stopInner = document.getElementById("stopInner");
+    stopInner.addEventListener("click", (event) => {
+      alert("Inner clicked (link blocked)");
+      event.preventDefault();
+      event.stopPropagation();
+    });
+
+    document.getElementById("stopMiddle").addEventListener("click", () =>
+      alert("Middle clicked")
+    );
+
+    document.getElementById("stopOuter").addEventListener("click", () =>
+      alert("Outer clicked")
+    );
+  </script>
+
+</body>
+</html>
