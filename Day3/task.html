@@ -157,7 +157,7 @@
             } else {
                 emailfeedback.textContent = ""
             }
-            return namePattern.test(name)
+            return emailPattern.test(email)
         }
         nameInput.addEventListener('blur', nameCheck)
         emailInput.addEventListener('blur', emailCheck)

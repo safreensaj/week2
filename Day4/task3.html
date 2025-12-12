@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CreamDewz</title>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="bg-[#3b1f1f] shadow-md fixed w-full z-[9999] text-white">
+      <div class="flex justify-end relative">
+        <img src="./assets/logo.jpeg" id="openheader"
+          class="hidden md:block w-10 h-10 absolute left-10 top-3 mr-10 rounded-full cursor-pointer">
+      </div>
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <h1 class="text-3xl font-bold">CreamDewz</h1>
+        <ul class="hidden md:flex space-x-6">
+          <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-500">About</a></li>
+          <li><a href="#menu" class="hover:text-blue-500" id="menubtn">Menu</a></li>
+          <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+          <li><a href="#faq" class="hover:text-blue-500">FAQ</a></li>
+        </ul>
+        <button id="menu-btn" class="md:hidden text-2xl"><i class="fas fa-bars menu-btn"></i></button>
+      </div>
+      <div id="menu" class="hidden md:hidden bg-white p-4 space-y-2">
+        <a href="#home" class="block">Home</a>
+        <a href="#about" class="block">About</a>
+        <a href="#Menu" class="block">Menu</a>
+        <a href="#contact" class="block">Contact</a>
+        <a href="#faq" class="block">FAQ</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="home"
+      class="relative h-screen flex flex-col items-center justify-center bg-cover bg-center text-white pt-16 md:pt-0"
+      style="background-image: url('./assets/chocolate.jpeg');">
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="relative z-10 text-center px-6">
+        <h1
+          class="text-6xl font-extrabold drop-shadow-lg mb-6 bg-gradient-to-r from-white to-yellow-300 bg-clip-text text-transparent">
+          Sweet Treats for Every Celebration!
+        </h1>
+        <p class="text-2xl max-w-2xl mx-auto drop-shadow-xl leading-relaxed mb-10">
+          Any celebration, big or small, is incomplete without something sweet!
+          Enjoy our handcrafted cakes and desserts that delight your taste buds and your eyes.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 md:gap-5 mt-4">
+          <img src="./assets/teddycake.jpeg"
+            class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-2xl shadow-xl border border-white/30">
+          <img src="./assets/macaron.jpeg"
+            class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-2xl shadow-xl border border-white/30">
+          <img src="./assets/aflatoon.jpeg"
+            class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-2xl shadow-xl border border-white/30">
+          <img src="./assets/cookies.jpeg"
+            class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-2xl shadow-xl border border-white/30">
+          <img src="./assets/melt.jpeg"
+            class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-2xl shadow-xl border border-white/30">
+        </div>
+        <div class="flex flex-wrap justify-center gap-3 md:gap-5 mt-4">
+          <img src="./assets/red.jpeg"
+            class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-2xl shadow-xl border border-white/30">
+          <img src="./assets/pistachio.jpeg"
+            class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-2xl shadow-xl border border-white/30">
+          <img src="./assets/kunaf.jpeg"
+            class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-2xl shadow-xl border border-white/30">
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="grid lg:grid-cols-2 gap-2 sm:grid-cols-2 p-2">
+        <div>
+          <img class="h-auto max-w-full rounded-base" src="./assets/milkcake.jpeg" alt="">
+        </div>
+        <div>
+          <img class="h-auto max-w-full rounded-base" src="./assets/hamper.jpeg" alt="">
+        </div>
+        <div>
+          <img class="h-auto max-w-full rounded-base" src="./assets/wafercake.jpeg" alt="">
+        </div>
+        <div>
+          <img class="h-auto max-w-full rounded-base" src="./assets/cupcake.jpeg" alt="">
+        </div>
+      </div>
+    </section>
+    <section id="about"
+      class="relative h-screen flex flex-col items-center justify-center text-red-900 bg-cover bg-center pt-24"
+      style="background-image: url('./assets/about.jpeg');">
+      <!-- Dark overlay for readability -->
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div
+        class="relative z-10 px-8 py-6 max-w-3xl text-right ml-auto bg-white/20 backdrop-blur-sm rounded-xl shadow-xl flex flex-col items-end">
+        <h2 class="text-6xl font-extrabold mb-6 drop-shadow-lg bg-[#800000] bg-clip-text text-transparent">
+          About Me
+        </h2>
+        <p class="text-2xl font-semibold mb-4 drop-shadow-xl">
+          I've been a <span class="text-red-900">homebaker since 2018, driven by a passion for creativity and
+            flavour</span>
+        </p>
+        <p class="text-3xl italic font-bold leading-relaxed drop-shadow-xl">
+          As a cake artist, I love transforming cakes
+          <span class="text-red-900">into edible art that tastes as good as it looks. Every bake is made with love,
+            passion, and a commitment to quality.</span>
+        </p>
+      </div>
+    </section>
+    <article>
+      <div class="w-full flex flex-col md:flex-row items-center gap-6 px-6 py-10">
+        <video src="./milkcakevideo.mp4" controls autoplay muted loop
+          class="w-full h-150 max-w-4xl rounded-xl shadow-xl object-cover">
+        </video>
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <h2 class="text-4xl font-extrabold text-[#800000] mb-4">
+            Tresleches Milkcake
+          </h2>
+          <p class="text-2xl font-semibold leading-relaxed text-[#800000]">
+            Our signature milk cake is rich, soft, and melt-in-the-mouth, made using a time-perfected recipe. Crafted
+            with
+            premium ingredients, this classic Milk Cake delivers pure nostalgia in every bite.
+          </p>
+        </div>
+      </div>
+    </article>
+    <section>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="grid gap-4">
+          <div>
+            <img class="h-auto max-w-full rounded-base" src="./assets/mermaid.jpeg" alt="">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-base" src="./assets/gulab.jpeg" alt="">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-base" src="./assets/tripple.jpeg" alt="">
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img class="h-auto max-w-full rounded-base" src="./assets/half.jpeg" alt="">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-base" src="./assets/wedding2.jpeg" alt="">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-base" src="./assets/seventeen.jpeg" alt="">
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img class="h-auto max-w-full rounded-base" src="./assets/chess.jpeg" alt="">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-base" src="./assets/ferrero.jpeg" alt="">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-base" src="./assets/black.jpeg" alt="">
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img class="h-auto max-w-full rounded-base" src="./assets/auto.jpeg" alt="">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-base" src="./assets/butterfly.jpeg" alt="">
+          </div>
+          <div>
+            <img class="h-auto max-w-full rounded-base" src="./assets/mac.jpeg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="faq" class="bg-gray-100 py-16">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-[#800000] mb-10">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <!-- FAQ Item 1 -->
+          <div class="border border-gray-300 rounded-lg overflow-hidden">
+            <button class="w-full flex justify-between items-center p-4 text-left faq-btn">
+              <span class="text-xl font-semibold">Do you take custom cake orders?</span>
+              <i class="fas fa-chevron-down transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-gray-700">
+              Yes! We accept customised cake orders. You can share your theme, design, and kg requirements.
+            </div>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div class="border border-gray-300 rounded-lg overflow-hidden">
+            <button class="w-full flex justify-between items-center p-4 text-left faq-btn">
+              <span class="text-xl font-semibold">How early should I place my order?</span>
+              <i class="fas fa-chevron-down transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-gray-700">
+              We recommend placing orders at least 2–3 days in advance. For themed cakes, book earlier!
+            </div>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div class="border border-gray-300 rounded-lg overflow-hidden">
+            <button class="w-full flex justify-between items-center p-4 text-left faq-btn">
+              <span class="text-xl font-semibold">Do you provide delivery?</span>
+              <i class="fas fa-chevron-down transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-gray-700">
+              Yes, we offer delivery within Thalassery & nearby areas (extra charges apply).
+            </div>
+          </div>
+          <!-- FAQ Item 4 -->
+          <div class="border border-gray-300 rounded-lg overflow-hidden">
+            <button class="w-full flex justify-between items-center p-4 text-left faq-btn">
+              <span class="text-xl font-semibold">Are your products eggless?</span>
+              <i class="fas fa-chevron-down transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-gray-700">
+              We serve both egg and eggless products based on client preferences.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="bg-[#f5eee9] font-sans">
+        <div class="text-center py-10">
+          <h1 class="text-3xl font-semibold tracking-wide">CONTACT US</h1>
+          <div class="w-16 h-1 bg-brown-700 mx-auto mt-2"></div>
+        </div>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6 pb-16">
+          <!-- Left: Contact Info -->
+          <div class="space-y-5 text-lg text-gray-700">
+            <div class="flex items-center gap-4">
+              <span class="text-xl"><i class="fa-solid fa-phone"></i></span>
+              <p>+919544066845</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-xl"><i class="fa-solid fa-house"></i></span>
+              <p>Thalassery, Kerala, 670101</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-xl">✉️</span>
+              <p>safrinesaj@gmail.com</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-xl"><i class="fa-regular fa-clock"></i></span>
+              <p>Monday – Saturday: 10:00 AM – 9:00 PM</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-xl">❌</span>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+          <!-- Right: Contact Form -->
+          <div>
+            <form class="space-y-6" id="submit-form">
+              <input type="text" placeholder="Your name" id="nameInput"
+                class="w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brown-500">
+              <p id="namefeedback" class="text-sm mt-1 text-red-600"></p>
+              <input type="email" placeholder="Your email" id="emailInput"
+                class="w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brown-500">
+              <p id="emailfeedback" class="text-sm mt-1 text-red-600"></p>
+              <textarea rows="5" placeholder="Your message"
+                class="w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brown-500"></textarea>
+              <button type="submit"
+                class="px-8 py-3 bg-[#3b1f1f] text-white rounded-full hover:bg-[#2a1515] transition">
+                Submit
+              </button>
+              <p id="feedback" class="text-sm mt-1 text-red-600"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer
+      class=" w-full p-4 bg-[#3b1f1f] border-t border-gray-200 shadow-sm md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+      <span class="text-md text-gray-100 dark:text-gray-400">© 2025 CreamDewz. All Rights Reserved.</span>
+      <ul class="flex flex-wrap items-center mt-3 text-md font-medium text-gray-200 dark:text-gray-400 sm:mt-0">
+        <li>
+          <a href="#" class="hover:underline me-4 md:me-6"><i class="fa-brands fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/creamdewz?igsh=MTd3a2RicmNwdG1ibg=="
+            class="hover:underline me-4 md:me-6"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="#" class="hover:underline me-4 md:me-6"><i class="fa-brands fa-square-twitter"></i></a>
+        </li>
+        <li>
+          <a href="#" class="hover:underline"><i class="fa-solid fa-phone"></i></a>
+        </li>
+      </ul>
+    </footer>
+    <!-- <div id="modal" class="fixed inset-0 right-2 bg-black/50 flex justify-center hidden items-center"> -->
+    <div id="modal" class="absolute hidden bg-white shadow-lg rounded-lg p-4 top-20 right-10 z-50 py-10">
+      <div class="h-60 w-80 bg-white rounded-lg relative">
+        <ul class="p-5 grid grid-cols-2 gap-3">
+          <li>Cakes</li>
+          <li>Macarons</li>
+          <li>Brownies</li>
+          <li>Cookies</li>
+          <li>Donuts</li>
+          <li>Pastries</li>
+          <li>Hampers</li>
+          <li>Gulab Jamun</li>
+          <li>Rasmalai milkcake</li>
+          <li>Tin Cakes</li>
+          <li>Bombolonies</li>
+          <li>Sugar Cookies</li>
+          <li>Puddings</li>
+          <li>Theme Cakes</li>
+        </ul>
+        <button id="close" class="absolute top-0 right-2 text-2xl font-bold text-gray-600 hover:text-black">
+          &times;
+        </button>
+      </div>
+    </div>
+  </main>
+  <script>
+    const menu = document.getElementById("menubtn")
+    const close = document.getElementById("close")
+    const modal = document.getElementById("modal")
+    const body = document.body
+    const demoform = document.getElementById('submit-form')
+    const nameInput = document.getElementById('nameInput')
+    const emailInput = document.getElementById('emailInput')
+    const namefeedback = document.getElementById('namefeedback')
+    const emailfeedback = document.getElementById('emailfeedback')
+    const feedback = document.getElementById('feedback')
+    menu.addEventListener('click', () => {
+      modal.classList.remove('hidden')
+      body.classList.add('overflow-hidden')
+    })
+    close.addEventListener('click', () => {
+      modal.classList.add('hidden')
+      body.classList.remove('overflow-hidden')
+    })
+    const faqButtons = document.querySelectorAll(".faq-btn");
+    faqButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const answer = btn.nextElementSibling;
+        answer.classList.toggle("hidden");
+        const icon = btn.querySelector("i");
+        icon.classList.toggle("rotate-180");
+      });
+    });
+    const namePattern = /^[A-Za-z ]+$/
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    function nameCheck() {
+      const name = nameInput.value.trim();
+      if (!namePattern.test(name)) {
+        namefeedback.textContent = "Incorrect name";
+      } else {
+        namefeedback.textContent = ""
+      }
+      return namePattern.test(name)
+    }
+    function emailCheck() {
+      const email = emailInput.value.trim();
+      if (!emailPattern.test(email)) {
+        emailfeedback.textContent = "Incorrect email";
+      } else {
+        emailfeedback.textContent = ""
+      }
+      return emailPattern.test(email)
+    }
+    nameInput.addEventListener('blur', nameCheck)
+    emailInput.addEventListener('blur', emailCheck)
+    demoform.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const allOk = nameCheck() && emailCheck()
+      if (allOk) {
+        feedback.textContent = "All ok, form submitting..."
+        feedback.className = "text-green-600"
+      }
+    })
+    $("#submit-form").submit((e) => {
+      e.preventDefault()
+      $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbzAnKy9h_3pVYErM27AKZxJmVt9wEDUIaYWdklqH7FRb621ej3ZJXX-iTkypkuXr_e7Zg/exec",
+        data: $("#submit-form").serialize(),
+        method: "post",
+        success: function (response) {
+          alert("Form submitted successfully")
+          window.location.reload()
+          //window.location.href="https://google.com"
+        },
+        error: function (err) {
+          alert("Something Error")
+
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>
