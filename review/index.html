@@ -2,77 +2,87 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form Modal</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
-    <header>
-        <button id="open" class="border rounded p-2 bg-gray-500 text-white m-3">Cntact US</button>
-        <div class="h-48 bg-blue-300"></div>
-        <div class="h-48 bg-yellow-300"></div>
-        <div class="h-48 bg-pink-300"></div>
-        <div class="h-48 bg-gray-300"></div>
-        <div id="modal" class="fixed inset-0 bg-black/50 flex justify-center items-center hidden">
-            <div class="h-72 w-64 bg-gray-100 relative p-3">
-                <form id="demoform" method="post">
-                    <label for="name" class="block mb-1 text-gray-700">Name</label>
-                    <input type="text" id="name" placeholder="Name" class="w-full border rounded p-2">
-                    <p id="namefeedback" class="text-sm text-red-400 mb-2"></p>
-                    <label for="email" class="block mb-1 text-gray-700">Email</label>
-                    <input type="email" id="email" class="w-full border rounded p-2">
-                    <button type="submit" id="submit" class="bg-blue-600 mt-2 rounded p-2 w-full">Submit</button>
-                    <p id="feedback" class="text-sm text-red-500"></p>
-                </form>
-                <button id="close"
-                    class="border rounded bg-blue-300 p-1 absolute bottom-0 right-0 mb-1 mr-1">Close</button>
-            </div>
+<body class="bg-yellow-100 min-h-screen">
+    <!-- Contact Us Button -->
+    <div class="p-6">
+        <button id="openModal" class="px-6 py-2 bg-blue-400 text-white rounded-lg hover:bg-blue-700">
+            Contact Us
+        </button>
+    </div>
+    <!-- Modal Overlay -->
+    <div id="modal" class="fixed inset-0 bg-black/40 hidden flex items-center justify-center">
+        <!-- Modal Box -->
+        <div class="bg-white w-80 rounded-lg p-5 relative">
+            <!-- Close Button -->
+            <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">✕
+            </button>
+            <h2 class="text-xl font-semibold mb-4">Contact Us</h2>
+            <!-- Contact Form -->
+            <form id="contactForm" novalidate>
+                <!-- Name -->
+                <label class="block mb-3">
+                    <span class="text-sm">Name</span>
+                    <input type="text" required minlength="3" class="w-full border rounded p-2 mt-1"
+                        placeholder="Your Name" />
+                </label>
+                <!-- Email -->
+                <label class="block mb-4">
+                    <span class="text-sm">Email</span>
+                    <input type="email" required class="w-full border rounded p-2 mt-1" placeholder="Your Email" />
+                </label>
+                <!-- Submit Button -->
+                <button type="submit" id="submitBtn"
+                    class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+                    Submit
+                </button>
+            </form>
         </div>
-    </header>
+    </div>
+    <!-- JavaScript -->
     <script>
-        const feedback = document.getElementById('feedback')
-        const namefeedback = document.getElementById('namefeedback')
-        const demoform = document.getElementById('demoform')
-        const inputname = document.getElementById('name')
-        const mybtn = document.getElementById('open')
-        const modal = document.getElementById('modal')
-        const close = document.getElementById('close')
-        const body = document.body
-        mybtn.addEventListener('click', () => {
-            modal.classList.remove("hidden")
-            body.classList.add('overflow-hidden')
-        })
-        close.addEventListener('click', () => {
-            modal.classList.add("hidden")
-            body.classList.remove('overflow-hidden')
-        })
-        const namePattern = /^[A-Z a-z]+\s+[A-Za-z]+$/
-        function nameCheck() {
-            const name = inputname.value.trim()
-            if (!namePattern.test(name)) {
-                namefeedback.textContent = 'incorrect name'
-                return false;
-            } else {
-                namefeedback.textContent = ""
-                return true;
+        const openModalBtn = document.getElementById("openModal");
+        const closeModalBtn = document.getElementById("closeModal");
+        const modal = document.getElementById("modal");
+        const form = document.getElementById("contactForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const body = document.body;
+        // Open modal
+        openModalBtn.addEventListener("click", () => {
+            modal.classList.remove("hidden");
+            body.classList.add("overflow-hidden"); // stop background scroll
+        });
+        // Close modal
+        closeModalBtn.addEventListener("click", () => {
+            modal.classList.add("hidden");
+            body.classList.remove("overflow-hidden");
+        });
+        // Form submit
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            // Validate form
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
             }
-        }
-        inputname.addEventListener('blur', nameCheck)
-        demoform.addEventListener('submit', (e) => {
-            e.preventDefault()
-
-            if (nameCheck()) {
-                feedback.textContent = ('Form submitting')
-                feedback.className = ('text-green-500')
-            } else {
-                namefeedback.textContent = "incorrect name"
-            }
-        })
-
+            // Change button text
+            submitBtn.textContent = "Sending...";
+            submitBtn.disabled = true;
+            // Reset after 3 seconds
+            setTimeout(() => {
+                submitBtn.textContent = "Submit";
+                submitBtn.disabled = false;
+                form.reset();
+                modal.classList.add("hidden");
+                body.classList.remove("overflow-hidden");
+            }, 3000);
+        });
     </script>
-
 </body>
 
 </html>
